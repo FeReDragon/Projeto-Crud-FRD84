@@ -104,3 +104,8 @@ body {
     cursor: pointer;
     box-shadow: 0px 10px 40px  rgb(235, 185, 121);
 }
+
+.img-login {
+    width: 50%;
+    height: 50%;
+}
