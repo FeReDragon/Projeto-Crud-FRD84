@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Clientes</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Endereço</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody id="listaClientes">
+      </tbody>
+    </table>
+
+
+<script>
+  // Aqui você precisaria carregar os dados dos clientes a partir de alguma fonte de dados, como uma API ou um banco de dados local.
+  // Neste exemplo, estamos usando uma lista fictícia de objetos para fins de demonstração:
+  var clientes = [
+    {
+      nome: "Cliente 1",
+      endereco: "Endereço do Cliente 1",
+      email: "email1@exemplo.com",
+      telefone: "11 1111-1111"
+    },
+    {
+      nome: "Cliente 2",
+      endereco: "Endereço do Cliente 2",
+      email: "email2@exemplo.com",
+      telefone: "22 2222-2222"
+    },
+    // ... e assim por diante
+  ];
+
+  // Esta função adiciona uma linha para cada cliente na tabela:
+  function adicionarLinhaCliente(cliente) {
+    var tabela = document.getElementById("listaClientes");
+    var linha = tabela.insertRow();
+
+    var celulaNome = linha.insertCell();
+    celulaNome.innerHTML = cliente.nome;
+
+    var celulaEndereco = linha.insertCell();
+    celulaEndereco.innerHTML = cliente.endereco;
+
+    var celulaEmail = linha.insertCell();
+    celulaEmail.innerHTML = cliente.email;
+
+    var celulaTelefone = linha.insertCell();
+    celulaTelefone.innerHTML = cliente.telefone;
+  }
+
+  // Aqui a função é chamada para cada cliente na lista:
+  for (var i = 0; i < clientes.length; i++) {
+    adicionarLinhaCliente(clientes[i]);
+  }
+</script>
+
+</body>
+</html>

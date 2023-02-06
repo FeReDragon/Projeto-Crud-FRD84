@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Produtos</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do Produto</th>
+          <th>Preço</th>
+          <th>Descrição</th>
+          <th>Código</th>
+          <th>Observação</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody id="listaProdutos">
+      </tbody>
+    </table>
+
+    <script>
+      // Aqui você precisaria carregar os dados dos produtos a partir de alguma fonte de dados, como uma API ou um banco de dados local.
+      // Neste exemplo, estamos usando uma lista fictícia de objetos para fins de demonstração:
+      var produtos = [
+        {
+          nome: "Produto 1",
+          preco: 10,
+          descricao: "Descrição do Produto 1",
+          codigo: "P1",
+          observacao: "Observação do Produto 1",
+          quantidade: 5
+        },
+        {
+          nome: "Produto 2",
+          preco: 20,
+          descricao: "Descrição do Produto 2",
+          codigo: "P2",
+          observacao: "Observação do Produto 2",
+          quantidade: 10
+        },
+        // ... e assim por diante
+      ];
+
+      // Esta função adiciona uma linha para cada produto na tabela:
+      function adicionarLinhaProduto(produto) {
+        var tabela = document.getElementById("listaProdutos");
+        var linha = tabela.insertRow();
+
+        var celulaNome = linha.insertCell();
+        celulaNome.innerHTML = produto.nome;
+
+        var celulaPreco = linha.insertCell();
+        celulaPreco.innerHTML = produto.preco;
+
+        var celulaDescricao = linha.insertCell();
+        celulaDescricao.innerHTML = produto.descricao;
+
+        var celulaCodigo = linha.insertCell();
+        celulaCodigo.innerHTML = produto.codigo;
+
+        var celulaObservacao = linha.insertCell();
+        celulaObservacao.innerHTML = produto.observacao;
+
+        var celulaQuantidade = linha.insertCell();
+        celulaQuantidade.innerHTML = produto.quantidade;
+      }
+
+     // Aqui a função é chamada para cada produto na lista:
+        for (var i = 0; i < produtos.length; i++) {
+        adicionarLinhaProduto(produtos[i]);
+        }
+    </script>
+  </body>
+</html>
